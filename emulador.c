@@ -93,11 +93,7 @@ int jle(int *pc, int op){
 }
 
 int main(){
-    FILE *file = fopen("arquivo.bin", "rb");
-    if (file == NULL) {
-        printf("Erro ao abrir o arquivo.\n");
-        return 1;
-    }
+    FILE *file = fopen("teste", "rb");
 
     int inst = 0, pc = 0;
     short buff;
@@ -192,8 +188,10 @@ int main(){
         if (acc == 0) {
             stats = stats | 1;
         }
+        printf("acc: %d stat: %d\n", acc, stats);
+        return 0;
     }
 
-    printf("acc: %d stat: %d\n", acc, stats);
+
     return 0;
 }
